@@ -132,6 +132,21 @@ uis.directive('uiSelect',
             }
         });
 
+        attrs.$observe('taggingColorPrefix', function() {
+            if(attrs.tagging !== undefined )
+            {
+              // check eval for FALSE, in this case, we disable the labels
+              // associated with tagging
+              if ( attrs.taggingColorPrefix === 'false' ) {
+                $select.taggingColorPrefix = null;
+              }
+              else
+              {
+                $select.taggingColorPrefix = attrs.taggingColorPrefix;
+              }
+            }
+        });
+
         //Automatically gets focus when loaded
         if (angular.isDefined(attrs.autofocus)){
           $timeout(function(){

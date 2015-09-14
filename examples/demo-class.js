@@ -133,15 +133,15 @@ app.controller('DemoCtrl', function($scope, $http, $timeout, $interval) {
   $scope.person = {};
   $scope.people = [
     { name: 'Adam',      email: 'adam@email.com',      age: 12, country: 'United States' },
-    { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina', color:"label-warning" },
-    { name: 'Estefanía', email: 'estefania@email.com', age: 21, country: 'Argentina', color:"label-danger" },
-    { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador', color:"label-warning" },
-    { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador', color:"label-info" },
-    { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States', color:"label-danger" },
-    { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia', color:"label-info" },
-    { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador', color:"label-warning" },
-    { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia', color:"label-danger" },
-    { name: 'Nicolás',   email: 'nicolas@email.com',    age: 43, country: 'Colombia', color:"label-warning" }
+    { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina', color:"warning" },
+    { name: 'Estefanía', email: 'estefania@email.com', age: 21, country: 'Argentina', color:"danger" },
+    { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador', color:"warning" },
+    { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador', color:"info" },
+    { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States', color:"danger" },
+    { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia', color:"info" },
+    { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador', color:"warning" },
+    { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia', color:"danger" },
+    { name: 'Nicolás',   email: 'nicolas@email.com',    age: 43, country: 'Colombia', color:"warning" }
   ];
 
   $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
