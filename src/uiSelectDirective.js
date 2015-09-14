@@ -21,7 +21,7 @@ uis.directive('uiSelect',
       if (angular.isDefined(tAttrs.multiple))
         tElement.append("<ui-select-multiple/>").removeAttr('multiple');
       else
-        tElement.append("<ui-select-single/>");       
+        tElement.append("<ui-select-single/>");
 
       return function(scope, element, attrs, ctrls, transcludeFn) {
 
@@ -43,7 +43,7 @@ uis.directive('uiSelect',
 
         $select.onSelectCallback = $parse(attrs.onSelect);
         $select.onRemoveCallback = $parse(attrs.onRemove);
-        
+
         //Limit the number of selections allowed
         $select.limit = (angular.isDefined(attrs.limit)) ? parseInt(attrs.limit, 10) : undefined;
 
@@ -115,6 +115,21 @@ uis.directive('uiSelect',
             var tokens = attrs.taggingTokens !== undefined ? attrs.taggingTokens.split('|') : [',','ENTER'];
             $select.taggingTokens = {isActivated: true, tokens: tokens };
           }
+        });
+
+        attrs.$observe('taggingColorProperty', function() {
+            if(attrs.tagging !== undefined )
+            {
+              // check eval for FALSE, in this case, we disable the labels
+              // associated with tagging
+              if ( attrs.taggingColorProperty === 'false' ) {
+                $select.taggingColorProperty = null;
+              }
+              else
+              {
+                $select.taggingColorProperty = attrs.taggingColorProperty;
+              }
+            }
         });
 
         //Automatically gets focus when loaded
